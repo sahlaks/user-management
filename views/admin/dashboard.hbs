@@ -1,0 +1,45 @@
+<h1 style="text-align:center">Admin Dashboard</h1>
+
+<div class="container mt-5 "style="width:60%">
+  <form action="/admin/search/" method="post" >
+  <input type="text" name="username" id="username">
+  {{error}}
+     <button  type="submit" class="btn btn-success">Search</button>
+     </form>
+  <button  type="submit" class="btn btn-success"><a href="/admin/adduser" style="text-decoration: none; color:white;">Add User</a></button>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr>
+        
+         {{#each users}}
+            <tr>
+                <td>{{@index}}</td>
+                <td>{{this.username}}</td>
+                <td>{{this.email}}</td>
+                <td><a href="/admin/useredit/{{this._id}}">Edit</a></td>
+                <td><a href="/admin/delete/{{this._id}}" onclick="return confirm('Are you sure want to delete')">Delete</a></td>
+            </tr>
+        
+            {{/each}}
+
+    </tr>
+    
+  </tbody>
+</table>
+ <p>Back to Home Page <a href="/admin/"  style="text-decoration: none; color:hotpink">Home</a></p>
+</div>
+
+
+
+           
+    

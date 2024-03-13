@@ -1,0 +1,16 @@
+<div class="text-center center-div" id="signup">
+<div class="container w-25 border py-5 " id="container">
+<h2 class="font-weight-bold">Update User</h2>
+    <form action="/admin/useredit/{{userId}}" method="post" >
+        <label for="">Username</label><br>
+        {{#if err.username.path}} <span class="text-danger">{{err.username.msg}}</span> {{/if}}
+        <input type="text" name="username" name="" onchange="change()" placeholder="Enter new Username"  id="" value=""><br>
+        {{err.errObj}}
+        <label for="">Email</label><br>
+         {{#if err.email.path}} <span class="text-danger">{{err.email.msg}}</span> {{/if}}
+        <input type="email" name="email" name="" placeholder="Enter new email"  id="" value=""><br><br>
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+</div>
+</div>
+

@@ -1,0 +1,19 @@
+<div class="text-center center-div" id="signup">
+<div class="container w-25 border py-5 " id="container">
+<h2 class="font-weight-bold">Sign Up</h2>
+    <form action="/admin/adduser" method="post" >
+        <label for="">Username</label><br>
+        {{#if err.username.path}} <span class="text-danger">{{err.username.msg}}</span> {{/if}}
+        <input type="text" name="username" name="" id=""><br>
+
+        <label for="">Email</label><br>
+        {{#if err.email.path}} <span class="text-danger">{{err.email.msg}}</span> {{/if}}
+        <input type="email" name="email" name="" id=""><br>
+        <label for="">Password</label><br>
+        {{#if err.password.path}} <span class="text-danger">{{err.password.msg}}</span> {{/if}}
+        <input type="password" name="password" name="" id=""><br><br>
+        <button type="submit" class="btn btn-success">Sign Up</button>
+        
+    </form>
+</div>
+</div>
